@@ -1,32 +1,54 @@
 package com.backend.study.hellospring.web;
 
+import com.backend.study.hellospring.service.HelloService;
+import com.backend.study.hellospring.web.dto.HelloResponseDto;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.is;
+import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = HelloController.class)
-public class HelloControllerTest {
+class HelloControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
+    @MockBean
+    private HelloService helloService;
+
     @Test
-    public void helloDto가_리턴된다() throws Exception {
+    @DisplayName("hello가 리턴된다")
+    void hello() throws Exception {
+        String hello = "Hello World!";
+
+        mvc.perform(get("/hello"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(hello));
+    }
+
+    @Test
+    @DisplayName("helloDto가 리턴된다")
+    void helloDto() throws Exception {
         String name = "hello";
         int amount = 1000;
 
+        given(helloService.save(name, amount))
+                .willReturn(new HelloResponseDto(name, amount));
+
         mvc.perform(
-                get("/hello/dto")
-                        .param("name", name)
-                        .param("amount", String.valueOf(amount)))
+                        get("/hello/dto")
+                                .param("name", name)
+                                .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name", is(name)))
-                .andExpect(jsonPath("$.amount", is(amount)));
+                .andExpect(jsonPath("$.name").value(name))
+                .andExpect(jsonPath("$.amount").value(amount)); // 여기가 핵심 수정! (.value 사용)
     }
 }
