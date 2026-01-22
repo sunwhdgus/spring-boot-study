@@ -3,9 +3,7 @@ package com.backend.study.hellospring.web;
 import com.backend.study.hellospring.service.HelloService;
 import com.backend.study.hellospring.web.dto.HelloResponseDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,5 +20,11 @@ public class HelloController {
     public HelloResponseDto helloDto(@RequestParam("name") String name,
                                      @RequestParam("amount") int amount) {
         return helloService.save(name, amount);
+    }
+
+    @DeleteMapping("/hello/dto/{id}")
+    public String delete(@PathVariable Long id) {
+        helloService.delete(id);
+        return id + "번 데이터가 삭제되었습니다.";
     }
 }

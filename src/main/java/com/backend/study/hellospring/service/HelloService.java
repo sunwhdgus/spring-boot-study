@@ -19,4 +19,9 @@ public class HelloService {
     public HelloResponseDto findById(Long id) {
         return helloRepository.findById(id);
     }
+
+    // 식제하기
+    public void delete(Long id) {
+        helloRepository.delete(id);
+    }
 }

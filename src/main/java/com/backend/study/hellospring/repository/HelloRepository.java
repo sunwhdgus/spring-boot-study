@@ -24,4 +24,14 @@ public class HelloRepository {
     public HelloResponseDto findById(Long id) {
         return store.get(id);
     }
+
+    // 4. 데이터 삭제하기
+    public void delete(Long id) {
+        store.remove(id);
+    }
+
+    // 5. 데이터 전체 조회
+    public Map<Long, HelloResponseDto> findAll() {
+        return store;
+    }
 }
