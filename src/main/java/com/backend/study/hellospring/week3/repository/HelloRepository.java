@@ -1,6 +1,6 @@
-package com.backend.study.hellospring.repository;
+package com.backend.study.hellospring.week3.repository;
 
-import com.backend.study.hellospring.web.dto.HelloResponseDto;
+import com.backend.study.hellospring.week3.web.dto.HelloResponseDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

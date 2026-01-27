@@ -1,7 +1,7 @@
-package com.backend.study.hellospring.service;
+package com.backend.study.hellospring.week3.service;
 
-import com.backend.study.hellospring.repository.HelloRepository;
-import com.backend.study.hellospring.web.dto.HelloResponseDto;
+import com.backend.study.hellospring.week3.repository.HelloRepository;
+import com.backend.study.hellospring.week3.web.dto.HelloResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

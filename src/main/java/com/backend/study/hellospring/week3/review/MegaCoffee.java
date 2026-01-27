@@ -3,7 +3,7 @@ package com.backend.study.hellospring.week3.review;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Primary
 public class MegaCoffee implements CoffeeMachine {
     public MegaCoffee() {

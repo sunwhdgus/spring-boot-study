@@ -1,7 +1,7 @@
-package com.backend.study.hellospring.web;
+package com.backend.study.hellospring.week3.web;
 
-import com.backend.study.hellospring.service.HelloService;
-import com.backend.study.hellospring.web.dto.HelloResponseDto;
+import com.backend.study.hellospring.week3.service.HelloService;
+import com.backend.study.hellospring.week3.web.dto.HelloResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

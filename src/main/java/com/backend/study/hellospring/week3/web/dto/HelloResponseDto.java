@@ -1,4 +1,4 @@
-package com.backend.study.hellospring.web.dto;
+package com.backend.study.hellospring.week3.web.dto;
 
 
 import lombok.Getter;

@@ -1,7 +1,8 @@
 package com.backend.study.hellospring.web;
 
-import com.backend.study.hellospring.service.HelloService;
-import com.backend.study.hellospring.web.dto.HelloResponseDto;
+import com.backend.study.hellospring.week3.service.HelloService;
+import com.backend.study.hellospring.week3.web.HelloController;
+import com.backend.study.hellospring.week3.web.dto.HelloResponseDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
