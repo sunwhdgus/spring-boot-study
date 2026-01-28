@@ -1,0 +1,8 @@
+### 결제 요청 보내기 (POST)
+POST http://localhost:8080/payment
+Content-Type: application/json
+
+{
+  "amount": 50000,
+  "orderId": "MY-ORDER-001"
+}
