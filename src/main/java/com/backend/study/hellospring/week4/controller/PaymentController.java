@@ -2,6 +2,7 @@ package com.backend.study.hellospring.week4.controller;
 
 import com.backend.study.hellospring.week4.domain.Payment;
 import com.backend.study.hellospring.week4.dto.PaymentRequest;
+import com.backend.study.hellospring.week4.exception.NotEnoughMoneyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,11 @@ public class PaymentController {
 
     @PostMapping("/payment")
     public ResponseEntity<Payment> createPayment(@RequestBody PaymentRequest paymentDetails) {
+
+        // 0. 예외 처리
+        if (paymentDetails.getAmount() <= 0) {
+            throw new NotEnoughMoneyException();
+        }
 
         // 1. 서버 로그로 확인 (잘 받았는지 출력)
         System.out.println("결제 요청 금액: " + paymentDetails.getAmount());

@@ -1,8 +1,17 @@
-### 결제 요청 보내기 (POST)
+### 1. 정상 요청
 POST http://localhost:8080/payment
 Content-Type: application/json
 
 {
   "amount": 50000,
   "orderId": "MY-ORDER-001"
+}
+
+### 2. 진상 요청
+POST http://localhost:8080/payment
+Content-Type: application/json
+
+{
+  "amount": -50000,
+  "orderId": "BAD-ORDER"
 }
