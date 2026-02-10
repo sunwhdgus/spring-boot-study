@@ -11,8 +11,11 @@ public class Product {
     private Long id;
 
     private String name;
-
     private Integer price;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     //Getter와 Setter (데이터를 넣고 빼기 위해 필요)
     public Long getId() { return id; }
@@ -23,4 +26,7 @@ public class Product {
 
     public Integer getPrice() { return price; }
     public void setPrice(Integer price) { this.price = price; }
+
+    public Member getMember() { return member; }
+    public void setMember(Member member) {this.member = member; }
 }
