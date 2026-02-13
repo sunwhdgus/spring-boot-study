@@ -93,8 +93,14 @@ public class TestRunner implements CommandLineRunner {
             System.out.println("--------------------------------------");
             System.out.println("회원 이름: " + m.getName());
             System.out.println("주문한 상품 수: " + m.getProducts().size() + "개");
-        }
 
+            int totalPrice = 0;
+            for (Product p : m.getProducts()) {
+                System.out.println("메뉴: " + p.getName() + " (" + p.getPrice() + "원)");
+                totalPrice += p.getPrice();
+            }
+            System.out.println("총 주문 금액: " + totalPrice + "원");
+        }
         System.out.println("======================================");
     }
 }
