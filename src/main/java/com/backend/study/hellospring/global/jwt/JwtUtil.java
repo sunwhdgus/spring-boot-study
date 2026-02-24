@@ -1,4 +1,4 @@
-package com.backend.study.hellospring.week7.config;
+package com.backend.study.hellospring.global.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -1,5 +1,6 @@
-package com.backend.study.hellospring.week7.config;
+package com.backend.study.hellospring.global.config;
 
+import com.backend.study.hellospring.global.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
