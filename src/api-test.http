@@ -1,9 +1,40 @@
-### 회원가입 테스트
+### 1. 회원가입
 POST http://localhost:8080/api/member/signup
 Content-Type: application/json
 
 {
-  "username": "finalTest2",
+  "username": "chickenLover",
   "password": "1234",
-  "nickname": "성공기원2"
+  "nickname": "치킨매니아"
+}
+
+### 2. 상품 등록
+POST http://localhost:8080/api/items
+Content-Type: application/json
+
+{
+  "name": "볼케이노 치킨",
+  "price" : 25000,
+  "stockQuantity": 100,
+  "detail": "매콤한 치킨"
+}
+
+### 3. 주문
+POST http://localhost:8080/api/orders
+Content-Type: application/json
+
+{
+  "username": "chickenLover",
+  "itemId": 1,
+  "count": 2
+}
+
+### 4. 게시글 작성
+POST http://localhost:8080/api/boards
+Content-Type: application/json
+
+{
+  "username": "chickenLover",
+  "title": "와 진짜 맛있네요",
+  "content": "배달도 빠르고 맛있어요"
 }
